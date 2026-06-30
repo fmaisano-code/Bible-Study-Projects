@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Closer to Jehovah — Workbook</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --accent: #5a67d8;
+            --accent-hover: #4c51bf;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .directory-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .directory-section h2 {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            margin: 0 0 1.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+        }
+
+        .card .btn {
+            align-self: flex-start;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Drawing Closer to Jehovah</h1>
+            <p>A Personal, Long-Term Bible Study Curriculum</p>
+        </header>
+
+        <main>
+            <section class="directory-section">
+                <h2>Study Modules</h2>
+                <div class="grid">
+                    
+                    <!-- Month 1 Card -->
+                    <a href="month-1-foundation/index.html" class="card">
+                        <div>
+                            <h3>Month 1: The Foundation</h3>
+                            <p>Establishing identity, daily routines, and spiritual guardrails for deeper study.</p>
+                        </div>
+                        <span class="btn">Open Module &rarr;</span>
+                    </a>
+
+                    <!-- Month 2 Card -->
+                    <a href="month-2-sovereign-heart/index.html" class="card">
+                        <div>
+                            <h3>Month 2: Heart of the Sovereign</h3>
+                            <p>Exploring universal sovereignty, Jehovah's feelings, and personal alignment.</p>
+                        </div>
+                        <span class="btn">Open Module &rarr;</span>
+                    </a>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>"Draw close to God, and he will draw close to you." — James 4:8</p>
+        </footer>
+    </div>
+
+</body>
+</html>
