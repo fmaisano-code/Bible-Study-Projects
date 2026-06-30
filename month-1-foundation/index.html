@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Month 1: The Foundation — Drawing Closer</title>
+    <title>Month 1: Foundation of Friendship — Workbook</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -12,10 +12,12 @@
             --text-muted: #718096;
             --accent: #5a67d8;
             --border: #e2e8f0;
+            --check-bg: #edf2f7;
+            --input-border: #cbd5e0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
@@ -44,45 +46,60 @@
         }
 
         header h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin: 0 0 0.5rem 0;
+            color: var(--text-main);
         }
 
         header .subtitle {
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin: 0;
+            margin: 0 0 1rem 0;
         }
 
-        .study-section {
+        .welcome-box {
+            background: linear-gradient(135deg, #f6f7ff 0%, #edf0ff 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+
+        .module-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .study-section h2 {
-            font-size: 1.3rem;
+        .module-card h2 {
+            font-size: 1.5rem;
             margin-top: 0;
             color: var(--accent);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
             padding-bottom: 0.5rem;
-        }
-
-        .meta-info {
-            font-style: italic;
-            color: var(--text-muted);
             margin-bottom: 1rem;
         }
 
-        /* Collapsible section styling */
-        details {
-            background: #f7fafc;
-            border: 1px solid var(--border);
+        .objective {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            background: var(--bg-color);
+            padding: 0.75rem 1rem;
             border-radius: 6px;
-            margin-bottom: 0.8rem;
-            padding: 0.75rem;
+        }
+
+        details {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.01);
         }
 
         summary {
@@ -90,16 +107,102 @@
             cursor: pointer;
             outline: none;
             user-select: none;
+            font-size: 1.1rem;
         }
 
         details[open] summary {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             border-bottom: 1px dashed var(--border);
-            padding-bottom: 0.25rem;
+            padding-bottom: 0.5rem;
+            color: var(--accent);
         }
 
         .details-content {
             padding: 0.25rem 0.5rem;
+        }
+
+        /* Checkbox items */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .check-item:hover {
+            background: var(--bg-color);
+        }
+
+        .check-item input[type="checkbox"] {
+            margin-right: 0.8rem;
+            transform: scale(1.2);
+            margin-top: 0.25rem;
+            cursor: pointer;
+        }
+
+        .check-item span {
+            font-size: 1rem;
+        }
+
+        /* Journal layout */
+        .journal-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .journal-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .journal-input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: #fff;
+            resize: vertical;
+        }
+
+        .journal-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.15);
+        }
+
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #e2e8f0;
+            color: #4a5568;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .video-btn:hover {
+            background: #cbd5e0;
+            color: #2d3748;
+        }
+
+        ul, ol {
+            margin-top: 0.5rem;
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -109,45 +212,479 @@
         <a href="../index.html" class="back-link">&larr; Back to Dashboard</a>
         
         <header>
-            <h1>Month 1: The Foundation</h1>
-            <p class="subtitle">Establishing identity, daily routines, and spiritual guardrails.</p>
+            <h1>Month 1: Foundation of Friendship</h1>
+            <p class="subtitle">A Personal Study Companion & Devotional Workbook</p>
         </header>
 
         <main>
-            <!-- Curriculum Overview -->
-            <div class="study-section">
-                <h2>Module Core Focus</h2>
-                <p>This foundational block centers on creating structural consistency in your personal study, clarifying spiritual identity, and refining intentional daily prayer routines.</p>
+            <div class="welcome-box">
+                <strong>Welcome to Your Journey:</strong> This workbook is designed not merely to increase your factual knowledge of the Bible, but to draw you into a deep, vibrant, and lifelong friendship with your Creator, Jehovah. As you spend 30 minutes on each module, let your heart be shaped by His profound qualities. Approach each study as a personal, guided walk with Him.
             </div>
 
-            <!-- Example Week 1 Section -->
-            <div class="study-section">
-                <h2>Week 1 Infrastructure</h2>
-                <p class="meta-info">Focus: Identity and Spiritual Guardrails</p>
-                
+            <!-- MODULE 1 -->
+            <section class="module-card">
+                <h2>Module 1: Approaching the Sovereign of the Universe as a Friend</h2>
+                <div class="objective"><strong>Objective:</strong> To overcome any feelings of insignificance and appreciate that the Almighty Supreme Ruler deeply desires a warm, personal relationship with you.</div>
+
                 <details>
-                    <summary>🙏 Intention & Prayer</summary>
+                    <summary>🙏 Opening Prayer Themes</summary>
                     <div class="details-content">
-                        <p>Focus your thoughts on defining personal spiritual boundaries and identifying routines that protect study time from daily distractions.</p>
+                        <label class="check-item"><input type="checkbox" id="m1-p1"><span>Praise Jehovah for His supreme position as Sovereign, while expressing amazement that He notices you individually.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m1-p2"><span>Thank Him for the invitation to look at Him not just as a distant Ruler, but as a close, tender Father.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m1-p3"><span>Ask Him to remove any mental or emotional barriers that make you feel too unworthy or insignificant to approach Him.</span></label>
                     </div>
                 </details>
 
                 <details>
-                    <summary>📖 Scriptural Reading & Meditation</summary>
+                    <summary>📖 Bible Reading & Accounts</summary>
                     <div class="details-content">
-                        <p>Suggested readings centered on spiritual identity and steadfastness. Reflect deeply on the application of these principles to daily choices.</p>
+                        <label class="check-item"><input type="checkbox" id="m1-r1"><span><strong>Psalm 8:3-5</strong> — Meditate on how human insignificance highlights Jehovah's grand condescension to notice us.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m1-r2"><span><strong>James 4:8</strong> — Focus on the beautiful, absolute guarantee: when you make a move toward Him, He moves toward you.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m1-r3"><span><strong>Account: Genesis 18:22-33</strong> — Observe how patiently Jehovah listened to Abraham's persistent questions, treating a man of dust as an honored partner in dialogue.</span></label>
                     </div>
                 </details>
 
                 <details>
-                    <summary>📝 Journaling & Research Notes</summary>
+                    <summary>📚 Read in JW Library / wol.jw.org</summary>
                     <div class="details-content">
-                        <p>Document observations, definitions of identity, or cross-references here during your personal study session.</p>
+                        <label class="check-item"><input type="checkbox" id="m1-lib1"><span><em>Draw Close to Jehovah</em>, Chapter 1: "Can You Really 'Draw Close to God'?" (Focus on paragraphs 1-10 to build conviction that friendship with God is fully possible).</span></label>
                     </div>
                 </details>
-            </div>
+
+                <details>
+                    <summary>🤔 Deep Meditation Questions</summary>
+                    <div class="details-content">
+                        <ol>
+                            <li>What does Jehovah's willingness to listen to Abraham's questions teach me about how He views my own anxieties and prayers?</li>
+                            <li>How does the truth that the Supreme Sovereign wants to be my friend change the way I view my self-worth?</li>
+                            <li>What quality of Jehovah in the Genesis account do I most admire, and how can I imitate His approachability when others come to me with concerns?</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📝 Walking With Jehovah Journal</summary>
+                    <div class="details-content">
+                        <div class="journal-group"><label for="m1-j1">One thing I learned about Jehovah today:</label><textarea id="m1-j1" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m1-j2">One quality of His I deeply admire from this lesson:</label><textarea id="m1-j2" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m1-j3">One scripture that touched my heart the most:</label><textarea id="m1-j3" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m1-j4">One way I distinctly saw Jehovah's hand in my life today:</label><textarea id="m1-j4" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m1-j5">One specific way I can imitate Him this week:</label><textarea id="m1-j5" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m1-j6">One prayer Jehovah has answered for me recently:</label><textarea id="m1-j6" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m1-j7">One central sentence I want to remember all week long:</label><textarea id="m1-j7" class="journal-input" rows="2"></textarea></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📺 Bonus Video</summary>
+                    <div class="details-content">
+                        <p><strong>Kenneth Cook, Jr.: 'Draw Close to God' (James 4:8) (9:42)</strong></p>
+                        <p>This Morning Worship discourse highlights practical, scriptural steps to dismantle doubts about whether we can truly be close to the Creator.</p>
+                        <a href="https://www.jw.org/finder?docid=1011214&wtlocale=E&srcid=share" target="_blank" class="video-btn">▶ Watch Video on JW.org</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🙏 Closing Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m1-cp1"><span>Thank Jehovah for His approachability and for treating humans with immense dignity.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m1-cp2"><span>Ask Him to embed the certainty of His love deep into your heart, especially when you feel insignificant during the upcoming week.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m1-cp3"><span>Pray that the scriptures read today will vividly return to your mind whenever you feel isolated or distant from Him.</span></label>
+                    </div>
+                </details>
+            </section>
+
+            <!-- MODULE 2 -->
+            <section class="module-card">
+                <h2>Module 2: Jehovah Has a Name — Knowing His Person</h2>
+                <div class="objective"><strong>Objective:</strong> To explore the profound meaning of God's personal name and realize how its fulfillment guarantees His constant support in your life.</div>
+
+                <details>
+                    <summary>🙏 Opening Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m2-p1"><span>Praise Jehovah using His holy, distinct personal name, acknowledging that He is unique and unmatched.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m2-p2"><span>Thank Him for revealing His name to mankind rather than hiding behind formal, impersonal titles.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m2-p3"><span>Ask Him to help you understand the depth of His name so that your trust in His capabilities becomes unshakable.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📖 Bible Reading & Accounts</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m2-r1"><span><strong>Exodus 3:13-15</strong> — Explore the definition of 'I Will Become What I Choose to Become' and how it reveals His dynamic nature.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m2-r2"><span><strong>Psalm 9:10</strong> — Examine the unbreakable connection between knowing Jehovah's name and placing your complete trust in Him.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m2-r3"><span><strong>Account: Exodus 14:13-31</strong> — Watch how Jehovah 'became' a Deliverer, a Protector, and an Unstoppable Force for Israel at the Red Sea, proving true to His name.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📚 Read in JW Library / wol.jw.org</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m2-lib1"><span><em>Draw Close to Jehovah</em>, Chapter 1: "Can You Really 'Draw Close to God'?" (Focus specifically on paragraphs 11-21, explaining the profound mechanics behind the Tetragrammaton).</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🤔 Deep Meditation Questions</summary>
+                    <div class="details-content">
+                        <ol>
+                            <li>What does Jehovah's name teach me about His flexibility and His commitment to helping His servants handle any situation?</li>
+                            <li>How does knowing that Jehovah can 'become' whatever is needed to fulfill His promise change the way I look at my current trials?</li>
+                            <li>What aspect of Jehovah's actions at the Red Sea made me stop and marvel at His power and care?</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📝 Walking With Jehovah Journal</summary>
+                    <div class="details-content">
+                        <div class="journal-group"><label for="m2-j1">One thing I learned about Jehovah today:</label><textarea id="m2-j1" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m2-j2">One quality of His I deeply admire from this lesson:</label><textarea id="m2-j2" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m2-j3">One scripture that touched my heart the most:</label><textarea id="m2-j3" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m2-j4">One way I distinctly saw Jehovah's hand in my life today:</label><textarea id="m2-j4" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m2-j5">One specific way I can imitate Him this week:</label><textarea id="m2-j5" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m2-j6">One prayer Jehovah has answered for me recently:</label><textarea id="m2-j6" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m2-j7">One central sentence I want to remember all week long:</label><textarea id="m2-j7" class="journal-input" rows="2"></textarea></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📺 Bonus Video</summary>
+                    <div class="details-content">
+                        <p><strong>The Meaning of God's Name (3:54)</strong></p>
+                        <p>A visually dynamic and clear explanation of the Hebrew text behind the divine name and how it applies to our daily reliance on God.</p>
+                        <a href="https://www.jw.org/finder?docid=702014131&wtlocale=E&srcid=share" target="_blank" class="video-btn">▶ Watch Video on JW.org</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🙏 Closing Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m2-cp1"><span>Express intense appreciation for the privilege of knowing and bearing the greatest name in the universe.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m2-cp2"><span>Ask Jehovah to 'become' whatever you need this week—whether a source of comfort, wisdom, or endurance.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m2-cp3"><span>Pray for opportunities to speak about His personal name and qualities to others with warmth and deep conviction.</span></label>
+                    </div>
+                </details>
+            </section>
+
+            <!-- MODULE 3 -->
+            <section class="module-card">
+                <h2>Module 3: The Ultimate Persona — God is Love</h2>
+                <div class="objective"><strong>Objective:</strong> To move past seeing love as just one of God's many traits, and instead internalize that love is His very essence, motivating every action He takes toward you.</div>
+
+                <details>
+                    <summary>🙏 Opening Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m3-p1"><span>Praise Jehovah as the source, definition, and perfect embodiment of genuine, unselfish love.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m3-p2"><span>Thank Him for the countless unseen ways His love has protected, guided, and sustained your life up to this moment.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m3-p3"><span>Ask Him to open your spiritual eyes to see and feel His loyal love ('chesed') in your everyday experiences.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📖 Bible Reading & Accounts</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m3-r1"><span><strong>1 John 4:8, 16</strong> — Contemplate why the Bible says God <em>is</em> love, rather than just saying He <em>has</em> love.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m3-r2"><span><strong>Jeremiah 31:3</strong> — Reflect on the reality of being drawn by Jehovah with an 'everlasting love' and 'loyal love.'</span></label>
+                        <label class="check-item"><input type="checkbox" id="m3-r3"><span><strong>Account: Luke 15:11-32</strong> — Examine the Prodigal Son's father, noticing how the father's actions perfectly mirror Jehovah's intense, eager desire to welcome and restore us.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📚 Read in JW Library / wol.jw.org</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m3-lib1"><span><em>Draw Close to Jehovah</em>, Chapter 23: "'God Is Love'" (Read paragraphs 1-10 to lay a firm foundation regarding the supremacy of Jehovah's dominant quality).</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🤔 Deep Meditation Questions</summary>
+                    <div class="details-content">
+                        <ol>
+                            <li>How does the father's reaction in Luke 15 (running, embracing, kissing) reshape my view of how Jehovah feels when I approach Him in prayer after stumbling?</li>
+                            <li>What does it mean to me personally that Jehovah loved me <em>before</em> I even knew Him or began serving Him?</li>
+                            <li>In what specific ways can I imitate Jehovah's proactive, non-judgmental love in my interactions with my family or congregation this week?</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📝 Walking With Jehovah Journal</summary>
+                    <div class="details-content">
+                        <div class="journal-group"><label for="m3-j1">One thing I learned about Jehovah today:</label><textarea id="m3-j1" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m3-j2">One quality of His I deeply admire from this lesson:</label><textarea id="m3-j2" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m3-j3">One scripture that touched my heart the most:</label><textarea id="m3-j3" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m3-j4">One way I distinctly saw Jehovah's hand in my life today:</label><textarea id="m3-j4" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m3-j5">One specific way I can imitate Him this week:</label><textarea id="m3-j5" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m3-j6">One prayer Jehovah has answered for me recently:</label><textarea id="m3-j6" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m3-j7">One central sentence I want to remember all week long:</label><textarea id="m3-j7" class="journal-input" rows="2"></textarea></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📺 Bonus Video</summary>
+                    <div class="details-content">
+                        <p><strong>Mark Sanderson: 'Jehovah Is a Stronghold in Times of Distress' (Ps. 9:9) (14:15)</strong></p>
+                        <p>This encouraging talk shows how Jehovah's fundamental love operates as a protective refuge when we experience severe personal crises.</p>
+                        <a href="https://www.jw.org/finder?docid=1011270&wtlocale=E&srcid=share" target="_blank" class="video-btn">▶ Watch Video on JW.org</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🙏 Closing Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m3-cp1"><span>Thank Jehovah for His overwhelming mercy and for running to embrace you whenever you seek His forgiveness.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m3-cp2"><span>Ask Him to help you rest securely in His love, banishing anxieties regarding your inadequacies.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m3-cp3"><span>Pray that His love will motivate you to act with greater kindness, patience, and forgiveness toward those around you.</span></label>
+                    </div>
+                </details>
+            </section>
+
+            <!-- MODULE 4 -->
+            <section class="module-card">
+                <h2>Module 4: The Beauty of His Holy Separation</h2>
+                <div class="objective"><strong>Objective:</strong> To understand that Jehovah's holiness is not cold or clinical, but represents His absolute purity, making Him completely clean, trustworthy, and safe to rely on.</div>
+
+                <details>
+                    <summary>🙏 Opening Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m4-p1"><span>Praise Jehovah for His magnificent holiness, His absolute freedom from badness, and His blinding moral purity.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m4-p2"><span>Thank Him for being a God who is completely reliable, who never tricks, exploits, or abandons His loyal ones.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m4-p3"><span>Ask Him to refine your mind and heart, helping you love what is pure and turn away from what is corrupt.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📖 Bible Reading & Accounts</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m4-r1"><span><strong>Isaiah 6:1-4</strong> — Put yourself in the position of Isaiah, witnessing the seraphim declaring the ultimate purity of God: 'Holy, holy, holy.'</span></label>
+                        <label class="check-item"><input type="checkbox" id="m4-r2"><span><strong>Habakkuk 1:13</strong> — Contemplate His pure eyes that cannot tolerate badness, assuring you that wickedness is temporary.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m4-r3"><span><strong>Account: 2 Samuel 6:1-11</strong> — Meditate on the account of Uzzah and the Ark, recognizing that God's holiness demands profound respect, yet brings immense blessing to those who handle sacred things correctly (v. 11).</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📚 Read in JW Library / wol.jw.org</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m4-lib1"><span><em>Draw Close to Jehovah</em>, Chapter 3: "'Holy, Holy, Holy Is Jehovah'" (Read paragraphs 1-10 to understand why holiness makes God uniquely trustworthy).</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🤔 Deep Meditation Questions</summary>
+                    <div class="details-content">
+                        <ol>
+                            <li>Why is the fact that Jehovah is completely holy and unable to do bad a source of ultimate safety and security for me?</li>
+                            <li>How does the visionary account in Isaiah 6 alter my attitude when I bow my knees to talk to Jehovah in prayer?</li>
+                            <li>Since Jehovah is separate from an unclean world, what is one specific habit or thought pattern I need to clean up to better reflect His holiness?</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📝 Walking With Jehovah Journal</summary>
+                    <div class="details-content">
+                        <div class="journal-group"><label for="m4-j1">One thing I learned about Jehovah today:</label><textarea id="m4-j1" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m4-j2">One quality of His I deeply admire from this lesson:</label><textarea id="m4-j2" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m4-j3">One scripture that touched my heart the most:</label><textarea id="m4-j3" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m4-j4">One way I distinctly saw Jehovah's hand in my life today:</label><textarea id="m4-j4" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m4-j5">One specific way I can imitate Him this week:</label><textarea id="m4-j5" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m4-j6">One prayer Jehovah has answered for me recently:</label><textarea id="m4-j6" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m4-j7">One central sentence I want to remember all week long:</label><textarea id="m4-j7" class="journal-input" rows="2"></textarea></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📺 Bonus Video</summary>
+                    <div class="details-content">
+                        <p><strong>Gerrit Lösch: Our Holy God, Jehovah (8:57)</strong></p>
+                        <p>An insightful explanation of what holiness truly means, explaining why it draws us closer to God rather than pushing us away.</p>
+                        <a href="https://www.jw.org/finder?docid=1011116&wtlocale=E&srcid=share" target="_blank" class="video-btn">▶ Watch Video on JW.org</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🙏 Closing Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m4-cp1"><span>Thank Jehovah for being a secure haven of moral stability and truth in a confusing, corrupt world.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m4-cp2"><span>Ask Him to help you preserve your own clean conscience and behavior, protecting your special friendship with Him.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m4-cp3"><span>Pray that you will remember to treat all spiritual things—meetings, field service, the Bible—with deep, holy respect this week.</span></label>
+                    </div>
+                </details>
+            </section>
+
+            <!-- MODULE 5 -->
+            <section class="module-card">
+                <h2>Module 5: God's Matchless Power Used for You</h2>
+                <div class="objective"><strong>Objective:</strong> To discover how Jehovah's dynamic energy and limitless strength are never used recklessly, but are always guided by love to protect and support you.</div>
+
+                <details>
+                    <summary>🙏 Opening Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m5-p1"><span>Praise Jehovah as the Creator of the stars and galaxies, the ultimate Source of dynamic energy and power.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m5-p2"><span>Thank Him for using His supreme might not to intimidate or crush you, but to gently support and guard your weak frame.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m5-p3"><span>Ask Him to inject His holy spirit into your heart today, giving you power beyond what is normal to handle your burdens.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📖 Bible Reading & Accounts</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m5-r1"><span><strong>Isaiah 40:25, 26, 29-31</strong> — Ponder the incredible guarantee that the Creator of the cosmos actively gives power to the tired and weary.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m5-r2"><span><strong>2 Chronicles 16:9</strong> — See Jehovah's eyes scanning the entire earth, eagerly searching for opportunities to thrust His power into action for you.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m5-r3"><span><strong>Account: 2 Kings 6:8-17</strong> — Relish Elisha's calm assurance as Jehovah opens his servant's eyes to see an entire mountain covered with fiery, protective heavenly chariots.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📚 Read in JW Library / wol.jw.org</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m5-lib1"><span><em>Draw Close to Jehovah</em>, Chapter 4: "'The Creator of the Ends of the Earth'" (Read paragraphs 1-11 to realize how effortlessly Jehovah manages universal energy).</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🤔 Deep Meditation Questions</summary>
+                    <div class="details-content">
+                        <ol>
+                            <li>When I face an obstacle that feels completely overwhelming, how can the account of Elisha's servant help me recalibrate my vision?</li>
+                            <li>How does it feel to know that Jehovah's eyes are searching the earth specifically looking to show His strength on <em>my</em> behalf?</li>
+                            <li>How can I better rely on Jehovah's power rather than burning out by trying to solve every problem with my own limited energy?</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📝 Walking With Jehovah Journal</summary>
+                    <div class="details-content">
+                        <div class="journal-group"><label for="m5-j1">One thing I learned about Jehovah today:</label><textarea id="m5-j1" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m5-j2">One quality of His I deeply admire from this lesson:</label><textarea id="m5-j2" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m5-j3">One scripture that touched my heart the most:</label><textarea id="m5-j3" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m5-j4">One way I distinctly saw Jehovah's hand in my life today:</label><textarea id="m5-j4" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m5-j5">One specific way I can imitate Him this week:</label><textarea id="m5-j5" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m5-j6">One prayer Jehovah has answered for me recently:</label><textarea id="m5-j6" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m5-j7">One central sentence I want to remember all week long:</label><textarea id="m5-j7" class="journal-input" rows="2"></textarea></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📺 Bonus Video</summary>
+                    <div class="details-content">
+                        <p><strong>'You Gave Me Courage'—Song (3:24)</strong></p>
+                        <p>A touching video showing how Jehovah infuses real-world strength into His servants during moments of extreme vulnerability and isolation.</p>
+                        <a href="https://www.jw.org/finder?docid=1102016182&wtlocale=E&srcid=share" target="_blank" class="video-btn">▶ Watch Video on JW.org</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🙏 Closing Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m5-cp1"><span>Acknowledge to Jehovah that you are weak on your own, and explicitly hand over your heaviest worries to Him.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m5-cp2"><span>Thank Him for the protective spiritual army that surrounds His people, providing invisible but solid safety.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m5-cp3"><span>Pray that you will step forward courageously this week, trusting that His power will fully activate the moment you begin to falter.</span></label>
+                    </div>
+                </details>
+            </section>
+
+            <!-- MODULE 6 -->
+            <section class="module-card">
+                <h2>Module 6: The Wisdom That Knows Your Frame</h2>
+                <div class="objective"><strong>Objective:</strong> To marvel at Jehovah's practical wisdom and understand that because He engineered your body and mind, His guidelines are perfectly customized for your long-term happiness.</div>
+
+                <details>
+                    <summary>🙏 Opening Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m6-p1"><span>Praise Jehovah for His unsearchable wisdom, which is beautifully visible in creation and flawlessly recorded in the Scriptures.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m6-p2"><span>Thank Him for giving you guidelines that prevent heartache, acting as a loving roadmap through a complex world.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m6-p3"><span>Ask Him to grant you a discerning heart so that you don't just learn His rules, but truly comprehend the wise principles behind them.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📖 Bible Reading & Accounts</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m6-r1"><span><strong>Psalm 104:24</strong> — Celebrate the astonishing depth of creation, noting how everything was made in absolute wisdom.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m6-r2"><span><strong>Psalm 139:1-6, 13-16</strong> — Contemplate how thoroughly Jehovah understood you before you were even born, knowing your thoughts from afar.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m6-r3"><span><strong>Account: 1 Kings 3:16-28</strong> — Observe the wisdom Jehovah gifted to Solomon to untangle a complex human dilemma, and consider how much greater Jehovah's own wisdom is.</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📚 Read in JW Library / wol.jw.org</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m6-lib1"><span><em>Draw Close to Jehovah</em>, Chapter 17: "'O the Depth of God's Wisdom!'" (Read paragraphs 1-10 to appreciate the distinction between mere knowledge and Jehovah's profound wisdom).</span></label>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🤔 Deep Meditation Questions</summary>
+                    <div class="details-content">
+                        <ol>
+                            <li>Since Psalm 139 shows that Jehovah knows every single detail of my internal makeup, why should I trust His advice over my own deep-seated feelings?</li>
+                            <li>What aspect of the natural world or my own physical body most clearly screams the practical wisdom of Jehovah to me?</li>
+                            <li>How can I show greater trust in Jehovah's wisdom when His Word asks me to do something that contradicts standard human logic?</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📝 Walking With Jehovah Journal</summary>
+                    <div class="details-content">
+                        <div class="journal-group"><label for="m6-j1">One thing I learned about Jehovah today:</label><textarea id="m6-j1" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m6-j2">One quality of His I deeply admire from this lesson:</label><textarea id="m6-j2" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m6-j3">One scripture that touched my heart the most:</label><textarea id="m6-j3" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m6-j4">One way I distinctly saw Jehovah's hand in my life today:</label><textarea id="m6-j4" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m6-j5">One specific way I can imitate Him this week:</label><textarea id="m6-j5" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m6-j6">One prayer Jehovah has answered for me recently:</label><textarea id="m6-j6" class="journal-input" rows="2"></textarea></div>
+                        <div class="journal-group"><label for="m6-j7">One central sentence I want to remember all week long:</label><textarea id="m6-j7" class="journal-input" rows="2"></textarea></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📺 Bonus Video</summary>
+                    <div class="details-content">
+                        <p><strong>Wonders of Creation Reveal God's Glory—Light and Color (4:54)</strong></p>
+                        <p>This beautiful video highlights the intricate engineering and artistic wisdom embedded in things we see every single day.</p>
+                        <a href="https://www.jw.org/finder?docid=702010141&wtlocale=E&srcid=share" target="_blank" class="video-btn">▶ Watch Video on JW.org</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🙏 Closing Prayer Themes</summary>
+                    <div class="details-content">
+                        <label class="check-item"><input type="checkbox" id="m6-cp1"><span>Thank Jehovah for being the Great Designer who understands your emotional and spiritual needs perfectly.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m6-cp2"><span>Ask Him to help you defer to His thinking whenever your own heart becomes confused or stubborn.</span></label>
+                        <label class="check-item"><input type="checkbox" id="m6-cp3"><span>Pray that you will walk with real wisdom this week, demonstrating insight, calm reasoning, and peace in all your personal relationships.</span></label>
+                    </div>
+                </details>
+            </section>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Auto-save checkboxes and text areas dynamically
+            const inputs = document.querySelectorAll('input[type="checkbox"], textarea');
+            
+            inputs.forEach(input => {
+                // Load previously saved entries from LocalStorage
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue !== null) {
+                    if (input.type === 'checkbox') {
+                        input.checked = savedValue === 'true';
+                    } else {
+                        input.value = savedValue;
+                    }
+                }
+
+                // Listen for changes and write to LocalStorage instantly
+                input.addEventListener('input', () => {
+                    const valueToSave = input.type === 'checkbox' ? input.checked : input.value;
+                    localStorage.setItem(input.id, valueToSave);
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
